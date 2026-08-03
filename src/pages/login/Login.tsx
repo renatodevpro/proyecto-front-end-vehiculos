@@ -81,18 +81,25 @@ const Login = () => {
         px={10}
         spacing={5}
         align="start"
+        position="relative"
       >
         <Button 
           variant="ghost" 
-          colorScheme="purple" 
           color="white"
           onClick={() => navigate('/')}
           size="sm"
+          position="absolute"
+          top="20px"
+          left="20px"
+          _hover={{
+            bg: "gray.800",
+            color: "purple.300"
+          }}
         >
           ← Volver a inicio
         </Button>
 
-        <VStack spacing={2} w="full" align="start">
+        <VStack spacing={2} w="full" align="center" textAlign="center">
           <Heading size="xl">Lux Cars</Heading>
           <Text fontSize="sm" color="gray.400">
             Ingresa tus datos para acceder a nuestro catslogo.

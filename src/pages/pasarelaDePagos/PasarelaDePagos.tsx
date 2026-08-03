@@ -46,10 +46,13 @@ const PasarelaDePagos = () => {
                     
                     <Button 
                       variant="ghost" 
-                      colorScheme="purple" 
                       color="white"
                       onClick={() => navegate(-1)}
                       size="sm"
+                      _hover={{
+                                bg: "gray.800",
+                                color: "purple.300"
+                            }}
                     >
                         ← Volver a vehiculos
                     </Button>

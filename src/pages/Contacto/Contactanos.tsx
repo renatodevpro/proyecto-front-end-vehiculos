@@ -13,6 +13,7 @@ import {
   Text,
   useToast,
 } from "@chakra-ui/react";
+
 import NavLayout from "../../layouts/NavLayout";
 
 const Contactanos = () => {
@@ -22,6 +23,7 @@ const Contactanos = () => {
   const [telefono, setTelefono] = useState("");
   const [modeloInteres, setModeloInteres] = useState("");
   const [mensaje, setMensaje] = useState("");
+
 
   const toast = useToast();
 
@@ -73,7 +75,9 @@ const Contactanos = () => {
   };
 
   return (
+    
     <NavLayout>
+
       <Box minH="100vh" bg="gray.900" color="white" py={10} px={4}>
         <VStack spacing={6} maxW="700px" mx="auto">
           <VStack spacing={2} textAlign="center">
@@ -85,7 +89,7 @@ const Contactanos = () => {
               Ingresa tus datos a continuación y nos comunicaremos contigo
             </Text>
           </VStack>
-
+          
           <Box
             as="form"
             onSubmit={handleSubmit}
@@ -96,6 +100,7 @@ const Contactanos = () => {
             p={8}
             w="100%"
           >
+
             <VStack spacing={4}>
               <HStack spacing={4} w="full">
                 <FormControl isRequired>
