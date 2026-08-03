@@ -4,7 +4,7 @@ const RutasPrivadas = () => {
     const acceso = localStorage.getItem('dataUsuario')
 
     return (
-        acceso ?<Outlet /> : <Navigate to='/' />
+        acceso ?<Outlet /> : <Navigate to='/login' />
     )
 }
 

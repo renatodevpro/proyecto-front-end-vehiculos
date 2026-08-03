@@ -10,12 +10,12 @@ const AppRoutes = () => {
     return (
         <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/vehiculos' element={<Vehiculos />} />
             <Route path='/login' element={<Login />} />
-            <Route element={<RutasPrivadas/>}>
+            <Route element={<RutasPrivadas />}>
                 <Route path='/detallesvehiculos' element={<DetallesVehiculos />} />
+                <Route path='/vehiculos' element={<Vehiculos />} />
+                <Route path='/:id/pasareladepagos' element={<PasarelaDePagos />} />
             </Route>
-            <Route path='/:id/pasareladepagos' element= {<PasarelaDePagos/>} />
         </Routes>
 
     )
