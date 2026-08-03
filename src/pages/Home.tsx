@@ -1,19 +1,11 @@
 import { Box, HStack, Text, Link, Button, VStack, Heading, Image } from "@chakra-ui/react"
 import { Link as RouterLink } from "react-router-dom"
+import NavLayout from "../layouts/NavLayout"
 
 const Home = () => {
     return (
-        <>
+        <NavLayout>
             <Box>
-                <HStack justifyContent="space-around">
-                    <Text>Lux Cars</Text>
-                    <HStack gap="20px">
-                        <Link as={RouterLink}>Inicio</Link>
-                        <Link as={RouterLink} to="/vehiculos">Vehiculos</Link>
-                        <Link as={RouterLink}>Contactanos</Link>
-                        <Button as={RouterLink} to="/login" >Log in</Button>
-                    </HStack>
-                </HStack>
                 <VStack alignItems="start" height="400px" bgImage="https://images.pexels.com/photos/15097792/pexels-photo-15097792.jpeg" bgPos="center" bgSize="cover" justifyContent="end" padding="4em">
                     <Heading color="white">Carros de lujo a solo un click</Heading>
                     <Text color="red">Nos encargamos de llevartelo a la puerta de tu casa</Text>
@@ -73,7 +65,7 @@ const Home = () => {
 
 
 
-        </>
+        </NavLayout>
 
 
     )

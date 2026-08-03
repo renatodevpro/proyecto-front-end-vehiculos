@@ -18,7 +18,7 @@ const VehiculosCard: FC<ProductCardType> = ({ product }) => {
             <Tag colorScheme='purple'>{product.marca}</Tag>
             <Text as='p' fontSize='xs'>{product.caracteristicas}</Text>
             <Text as='p' fontSize='xl' fontWeight='bold'>${product.precio}</Text>
-            <Button size='sm' colorScheme='purple'>Comprar Vehiculo</Button>
+            <Button size='sm' colorScheme='purple' as={RouterLink} to = {`/${product.id}/pasareladepagos`}>Comprar Vehiculo</Button>
         </VStack>
     )
 }

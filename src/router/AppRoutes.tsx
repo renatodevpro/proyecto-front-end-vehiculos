@@ -15,7 +15,7 @@ const AppRoutes = () => {
             <Route element={<RutasPrivadas/>}>
                 <Route path='/detallesvehiculos' element={<DetallesVehiculos />} />
             </Route>
-            <Route path='/pasareladepagos' element= {<PasarelaDePagos/>} />
+            <Route path='/:id/pasareladepagos' element= {<PasarelaDePagos/>} />
         </Routes>
 
     )

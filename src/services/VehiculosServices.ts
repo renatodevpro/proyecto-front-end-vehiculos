@@ -22,3 +22,10 @@ export const signIn = async (username: string, password: string) => {
     const data = await response.json() as DummyAuth
     return data
 }
+
+export const getVehicleById = async (id:number) => {
+    const response = await fetch("/data/ClaudeAutos.json")
+    const data = await response.json() as Vehiculos
+    const auto = data.find((vehiculoIndividual) => vehiculoIndividual.id == id )
+
+    return auto }
