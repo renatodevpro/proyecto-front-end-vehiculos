@@ -73,14 +73,26 @@ const Login = () => {
     <HStack height="100vh" spacing={0} bg="gray.900" color="white">
       <VStack
         as="form"
+        noValidate
         onSubmit={handleSubmit}
         width={{ base: "100%", md: "40%" }}
         height="100%"
         justifyContent="center"
         px={10}
         spacing={5}
+        align="start"
       >
-        <VStack spacing={2} w="full">
+        <Button 
+          variant="ghost" 
+          colorScheme="purple" 
+          color="white"
+          onClick={() => navigate('/')}
+          size="sm"
+        >
+          ← Volver a inicio
+        </Button>
+
+        <VStack spacing={2} w="full" align="start">
           <Heading size="xl">Lux Cars</Heading>
           <Text fontSize="sm" color="gray.400">
             Ingresa tus datos para acceder a nuestro catálogo.
