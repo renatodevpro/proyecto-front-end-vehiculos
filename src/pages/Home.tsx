@@ -10,7 +10,7 @@ const Home = () => {
                     <HStack gap="20px">
                         <Link as={RouterLink}>Inicio</Link>
                         <Link as={RouterLink} to="/vehiculos">Vehiculos</Link>
-                        <Link as={RouterLink}>Contactanos</Link>
+                        <Link as={RouterLink} to="/contactanos">Contactanos</Link>
                         <Button as={RouterLink} to="/login" >Log in</Button>
                     </HStack>
                 </HStack>
