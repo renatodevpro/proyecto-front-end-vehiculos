@@ -95,7 +95,7 @@ const Login = () => {
         <VStack spacing={2} w="full" align="start">
           <Heading size="xl">Lux Cars</Heading>
           <Text fontSize="sm" color="gray.400">
-            Ingresa tus datos para acceder a nuestro catálogo.
+            Ingresa tus datos para acceder a nuestro catslogo.
           </Text>
         </VStack>
 
