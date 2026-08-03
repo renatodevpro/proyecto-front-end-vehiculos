@@ -1,26 +1,30 @@
 import { Box, HStack, Text, Link, Button, VStack, Heading, Image } from "@chakra-ui/react"
 import { Link as RouterLink } from "react-router-dom"
+import NavLayout from "../layouts/NavLayout"
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import "@splidejs/react-splide/css"
 
 const Home = () => {
     return (
-        <>
-            <Box>
-                <HStack justifyContent="space-around">
-                    <Text>Lux Cars</Text>
-                    <HStack gap="20px">
-                        <Link as={RouterLink}>Inicio</Link>
-                        <Link as={RouterLink} to="/vehiculos">Vehiculos</Link>
-                        <Link as={RouterLink}>Contactanos</Link>
-                        <Button as={RouterLink} to="/login" >Log in</Button>
-                    </HStack>
-                </HStack>
-                <VStack alignItems="start" height="400px" bgImage="https://images.pexels.com/photos/15097792/pexels-photo-15097792.jpeg" bgPos="center" bgSize="cover" justifyContent="end" padding="4em">
+        <NavLayout>
+           <Box height="400px" margin="0 auto" position="relative">
+                <Splide options={{ autoplay: true, interval: 3000, type: "loop" }} aria-label="My Favorite Images">
+                    <SplideSlide>
+                        <Box height="400px" bgImage="https://images.pexels.com/photos/15097792/pexels-photo-15097792.jpeg" bgPos="center" bgSize="cover"/>
+                    </SplideSlide>
+                    <SplideSlide>
+                        <Box height="400px" bgImage="https://images.pexels.com/photos/37147588/pexels-photo-37147588.jpeg" bgPos="center" bgSize="cover"/>
+                    </SplideSlide>
+                    <SplideSlide>
+                        <Box height="400px" bgImage="https://images.pexels.com/photos/5488732/pexels-photo-5488732.jpeg" bgPos="center" bgSize="cover"/>
+                    </SplideSlide>
+                </Splide>
+                <VStack alignItems="start" justifyContent="end" padding="4em" position="absolute" bottom="0" bgColor="blackAlpha.300" width="100%" height="100%">
                     <Heading color="white">Carros de lujo a solo un click</Heading>
                     <Text color="red">Nos encargamos de llevartelo a la puerta de tu casa</Text>
                     <Button bgColor="gray">Cotiza hoy</Button>
                 </VStack>
             </Box>
-
             <VStack gap="50px" margin="50px">
                 <VStack>
                     <Heading size="lg">Servicios Lux Cars</Heading>
@@ -65,7 +69,7 @@ const Home = () => {
                 <VStack bgImage="https://images.pexels.com/photos/10669668/pexels-photo-10669668.jpeg" width="100%" height="600px" bgSize="cover">
                     <Heading>Consecionario Lux Cars</Heading>
                     <Text>Venta y postventa</Text>
-                    </VStack>
+                </VStack>
                 <HStack>
                     <VStack></VStack>
                 </HStack>
@@ -73,7 +77,7 @@ const Home = () => {
 
 
 
-        </>
+        </NavLayout>
 
 
     )

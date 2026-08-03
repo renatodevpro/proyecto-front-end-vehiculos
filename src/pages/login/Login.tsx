@@ -1,6 +1,9 @@
 import { Button, FormControl, FormLabel, Heading, HStack, Input, VStack } from "@chakra-ui/react"
 import { signIn } from "../../services/VehiculosServices"
-
+import NavLayout from "../../layouts/NavLayout"
+interface datosFormulario {username:string
+    password:string
+}
 
 const Login = () => {
 
@@ -9,7 +12,7 @@ const Login = () => {
 
         const formulario = e.currentTarget
         const formData = new FormData(formulario)
-        const data = Object.fromEntries(formData)
+        const data = Object.fromEntries(formData) as unknown as datosFormulario
 
         const result = await signIn(data.username, data.password)
         localStorage.setItem('dataUsuario', JSON.stringify(result))
@@ -17,6 +20,7 @@ const Login = () => {
     }
 
   return (
+    <NavLayout>
     <HStack height='100vh'>
         <VStack as='form' onSubmit={(e) => dummyLogin(e)} width='50%' height='100%' bgColor='orange'>
             <Heading bgColor='lightblue'>Lux Cars Log in</Heading>
@@ -37,6 +41,7 @@ const Login = () => {
 
         </VStack>
     </HStack>
+    </NavLayout>
   )
 }
 
