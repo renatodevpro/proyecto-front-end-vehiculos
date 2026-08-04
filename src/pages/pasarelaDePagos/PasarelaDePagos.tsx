@@ -22,6 +22,24 @@ const PasarelaDePagos = () => {
         CargarVehiculo()
     }, [id])
 
+    const soloLetras = (e: any) => {
+        e.target.value = e.target.value.replace(/[^a-zA-Z\s]/g, '')
+    }
+
+    const soloNumeros = (e: any) => {
+        e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 16)
+    }
+
+    const soloNumerosExp = (e: any) => {
+        const primerValor = e.target.value.replace(/[^0-9]/g, '').slice(0, 4)
+        const valorFormateado = primerValor.replace(/(\d{2})(\d{2})/, '$1/$2')
+        e.target.value = valorFormateado    
+    }
+
+    const soloNumerosSeguridad = (e: any) => {
+        e.target.value = e.target.value.replace(/[^0-9]/g, '').slice(0, 4)
+
+    }
     const pagarBotonHandler = (e: any) => {
         e.preventDefault()
 
@@ -76,7 +94,7 @@ const PasarelaDePagos = () => {
                         <VStack align="start" width='100%'>
                             <FormControl>
                                 <FormLabel fontSize="sm">Numero de Tarjeta</FormLabel>
-                                <Input bg="gray.700" borderColor="gray.600" id="numTarjeta" />
+                                <Input bg="gray.700" borderColor="gray.600" id="numTarjeta" type="number" maxLength={16} onChange={soloNumeros} />
                             </FormControl>
                             <Image width="180px" src={imagenesTarjetas} />
                         </VStack>
@@ -84,17 +102,17 @@ const PasarelaDePagos = () => {
                         <HStack width='100%'>
                             <FormControl>
                                 <FormLabel fontSize="sm">Expiracion (MM/YY)</FormLabel>
-                                <Input bg="gray.700" borderColor="gray.600" />
+                                <Input bg="gray.700" borderColor="gray.600" onChange={soloNumerosExp} />
                             </FormControl>
                             <FormControl>
                                 <FormLabel fontSize="sm">Numero de Seguridad</FormLabel>
-                                <Input type="password" bg="gray.700" borderColor="gray.600" />
+                                <Input type="password" bg="gray.700" borderColor="gray.600" onChange={soloNumerosSeguridad} />
                             </FormControl>
                         </HStack>
 
                         <FormControl>
                             <FormLabel fontSize="sm">Nombre en la Tarjeta</FormLabel>
-                            <Input bg="gray.700" borderColor="gray.600" />
+                            <Input bg="gray.700" borderColor="gray.600" onChange={soloLetras} />
                         </FormControl>
 
                         <FormControl>
