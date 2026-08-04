@@ -8,18 +8,16 @@ import PasarelaDePagos from '../pages/pasarelaDePagos/PasarelaDePagos';
 import RutasPrivadas from './outlets/RutasPrivadas';
 
 const AppRoutes = () => {
-  return (
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/contactanos' element={<Contactanos />} />
-
-      <Route element={<RutasPrivadas />}>
-        <Route path='/vehiculos' element={<Vehiculos />} />
-        <Route path='/vehiculos/:id' element={<DetallesVehiculos />} />
-        <Route path='/:id/pasareladepagos' element={<PasarelaDePagos />} />
-      </Route>
-    </Routes>
+    return (
+        <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/login' element={<Login />} />
+            <Route element={<RutasPrivadas />}>
+                <Route path='/detallesvehiculos' element={<DetallesVehiculos />} />
+                <Route path='/vehiculos' element={<Vehiculos />} />
+                <Route path='/:id/pasareladepagos' element={<PasarelaDePagos />} />
+            </Route>
+        </Routes>  
   );
 };
 

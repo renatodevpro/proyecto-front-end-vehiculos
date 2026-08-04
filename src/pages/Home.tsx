@@ -1,29 +1,48 @@
 import { Box, HStack, Text, Button, VStack, Heading, Image } from "@chakra-ui/react"
 import NavLayout from "../layouts/NavLayout"
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import "@splidejs/react-splide/css"
 
 const Home = () => {
-  return (
-    <NavLayout>
-      <Box>
-        <VStack
-          alignItems="start"
-          height="400px"
-          bgImage="https://images.pexels.com/photos/15097792/pexels-photo-15097792.jpeg"
-          bgPos="center"
-          bgSize="cover"
-          justifyContent="flex-end"
-          padding="4em"
-        >
-          <Heading color="white">Carros de lujo a solo un click</Heading>
-          <Text color="red.300" fontWeight="bold">
-            Nos encargamos de llevártelo a la puerta de tu casa
-          </Text>
-          <Button colorScheme="purple" size="md">
-            Cotiza hoy
-          </Button>
-        </VStack>
-      </Box>
-
+    return (
+        <NavLayout>
+           <Box height="400px" margin="0 auto" position="relative">
+                <Splide options={{ autoplay: true, interval: 3000, type: "loop" }} aria-label="My Favorite Images">
+                    <SplideSlide>
+                        <Box height="400px" bgImage="https://images.pexels.com/photos/15097792/pexels-photo-15097792.jpeg" bgPos="center" bgSize="cover"/>
+                    </SplideSlide>
+                    <SplideSlide>
+                        <Box height="400px" bgImage="https://images.pexels.com/photos/37147588/pexels-photo-37147588.jpeg" bgPos="center" bgSize="cover"/>
+                    </SplideSlide>
+                    <SplideSlide>
+                        <Box height="400px" bgImage="https://images.pexels.com/photos/5488732/pexels-photo-5488732.jpeg" bgPos="center" bgSize="cover"/>
+                    </SplideSlide>
+                </Splide>
+                <VStack alignItems="start" justifyContent="end" padding="4em" position="absolute" bottom="0" bgColor="blackAlpha.300" width="100%" height="100%">
+                    <Heading color="white">Carros de lujo a solo un click</Heading>
+                    <Text color="red">Nos encargamos de llevartelo a la puerta de tu casa</Text>
+                    <Button bgColor="gray">Cotiza hoy</Button>
+                </VStack>
+            </Box>
+            <VStack gap="50px" margin="50px">
+                <VStack>
+                    <Heading size="lg">Servicios Lux Cars</Heading>
+                    <Text>¿Como podemos ayudarte? </Text>
+                </VStack>
+                <VStack gap="40px" textAlign="center">
+                    <HStack gap="25px">
+                        <Box height="300px" width="300px" bgImg="https://images.pexels.com/photos/27951446/pexels-photo-27951446.jpeg" bgSize="cover">
+                            <Text bgColor="black" color="white" >Vehiculos Nuevos</Text>
+                        </Box>
+                        <Box bgColor="blue.200" height="300px" width="300px">Solicitud de repuestos</Box>
+                    </HStack>
+                    <HStack gap="25px">
+                        <Box bgColor="blue.200" height="300px" width="300px">Cita de Servicios</Box>
+                        <Box bgColor="blue.200" height="300px" width="300px">Latoneria y Pintura</Box>
+                        <Box bgColor="blue.200" height="300px" width="300px">Poliza de seguros</Box>
+                    </HStack>
+                </VStack>
+            </VStack>
 
       <VStack spacing={8} my={12}>
         <VStack textAlign="center">
