@@ -85,7 +85,7 @@ const PasarelaDePagos = () => {
                               Observaciones: {vehicle.caracteristicas}
                             </Text>
                             <Text fontWeight="bold" color="purple.200">
-                              Precio: ${vehicle.precio}
+                              Precio: {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(vehicle?.precio || 0)}
                             </Text>
                         </VStack>
                     )}
@@ -94,7 +94,7 @@ const PasarelaDePagos = () => {
                         <VStack align="start" width='100%'>
                             <FormControl>
                                 <FormLabel fontSize="sm">Numero de Tarjeta</FormLabel>
-                                <Input bg="gray.700" borderColor="gray.600" id="numTarjeta" type="number" maxLength={16} onChange={soloNumeros} />
+                                <Input bg="gray.700" borderColor="gray.600" id="numTarjeta" type="number" maxLength={16} onChange={soloNumeros} placeholder="000 0000 0000 0000"/>
                             </FormControl>
                             <Image width="180px" src={imagenesTarjetas} />
                         </VStack>
@@ -102,26 +102,26 @@ const PasarelaDePagos = () => {
                         <HStack width='100%'>
                             <FormControl>
                                 <FormLabel fontSize="sm">Expiracion (MM/YY)</FormLabel>
-                                <Input bg="gray.700" borderColor="gray.600" onChange={soloNumerosExp} />
+                                <Input bg="gray.700" borderColor="gray.600" onChange={soloNumerosExp} placeholder="MM/YY"/>
                             </FormControl>
                             <FormControl>
                                 <FormLabel fontSize="sm">Numero de Seguridad</FormLabel>
-                                <Input type="password" bg="gray.700" borderColor="gray.600" onChange={soloNumerosSeguridad} />
+                                <Input type="password" bg="gray.700" borderColor="gray.600" onChange={soloNumerosSeguridad} placeholder="000"/>
                             </FormControl>
                         </HStack>
 
                         <FormControl>
                             <FormLabel fontSize="sm">Nombre en la Tarjeta</FormLabel>
-                            <Input bg="gray.700" borderColor="gray.600" onChange={soloLetras} />
+                            <Input bg="gray.700" borderColor="gray.600" onChange={soloLetras} placeholder="Nombre completo"/>
                         </FormControl>
 
                         <FormControl>
                             <FormLabel fontSize="sm">Direccion de Envio</FormLabel>
-                            <Input bg="gray.700" borderColor="gray.600" />
+                            <Input bg="gray.700" borderColor="gray.600" placeholder="Dirección completa"/>
                         </FormControl>
 
                         <Button type="submit" colorScheme="purple" width="100%" mt="15px">
-                            Pagar ${vehicle?.precio}
+                            Pagar {new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(vehicle?.precio || 0)}
                         </Button>
                     </VStack>
                 </VStack>
