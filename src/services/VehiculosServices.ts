@@ -1,31 +1,36 @@
-import type { DummyAuth } from "../module/dummyJson"
-import type { Vehiculos } from "../module/vehiculosTipo"
+import type { DummyAuth } from "../module/dummyJson";
+import type { Vehiculo, Vehiculos } from "../module/vehiculosTipo";
 
-const API = 'https://dummyjson.com'
+const API = 'https://dummyjson.com';
 
-export const getVehiculos = async () => {
-    console.log("me ejecuté")
-    const response = await fetch("/data/ClaudeAutos.json")
-    const data = await response.json() as Vehiculos
-    console.log(data)
-
-    return data
+export async function getVehiculos() {
+  const response = await fetch("/data/ClaudeAutos.json");
+  if (!response.ok) {
+    throw new Error("Error al obtener la lista de vehículos");
+  }
+  const data = await response.json();
+  return data as Vehiculos;
 }
 
-export const signIn = async (username: string, password: string) => {
-    const response = await fetch(`${API}/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password })
-    })
-
-    const data = await response.json() as DummyAuth
-    return data
+export async function getVehicleById(id: number) {
+  const vehiculos = await getVehiculos();
+  const encontrado: Vehiculo | undefined = vehiculos.find(item => Number(item.id) === id);
+  return encontrado;
 }
 
-export const getVehicleById = async (id:number) => {
-    const response = await fetch("/data/ClaudeAutos.json")
-    const data = await response.json() as Vehiculos
-    const auto = data.find((vehiculoIndividual) => vehiculoIndividual.id == id )
+export async function signIn(username: string, password: string) {
+  const response = await fetch(`${API}/auth/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ username, password })
+  });
 
-    return auto }
+  const data = await response.json();
+
+  if (!response.ok) {
+    if (data.message === "Invalid credentials") {
+      throw new Error("Usuario o contraseña incorrectos.");
+    }
+  }
+  return data as DummyAuth;
+}

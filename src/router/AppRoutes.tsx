@@ -1,10 +1,11 @@
-import { Route, Routes } from 'react-router-dom'
-import Home from '../pages/Home'
-import Vehiculos from '../pages/Vehiculos/Vehiculos'
-import Login from '../pages/login/Login'
-import DetallesVehiculos from '../pages/detallesVehiculos/DetallesVehiculos'
-import RutasPrivadas from './outlets/RutasPrivadas'
-import PasarelaDePagos from '../pages/pasarelaDePagos/PasarelaDePagos'
+import { Route, Routes } from 'react-router-dom';
+import Home from '../pages/Home';
+import Vehiculos from '../pages/Vehiculos/Vehiculos';
+import Login from '../pages/login/Login';
+import Contactanos from '../pages/Contacto/Contactanos';
+import DetallesVehiculos from '../pages/detallesVehiculos/DetallesVehiculos';
+import PasarelaDePagos from '../pages/pasarelaDePagos/PasarelaDePagos';
+import RutasPrivadas from './outlets/RutasPrivadas';
 
 const AppRoutes = () => {
     return (
@@ -16,9 +17,8 @@ const AppRoutes = () => {
                 <Route path='/vehiculos' element={<Vehiculos />} />
                 <Route path='/:id/pasareladepagos' element={<PasarelaDePagos />} />
             </Route>
-        </Routes>
+        </Routes>  
+  );
+};
 
-    )
-}
-
-export default AppRoutes
+export default AppRoutes;
