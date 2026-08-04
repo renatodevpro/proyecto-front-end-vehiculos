@@ -10,10 +10,10 @@ console.log(location.pathname)
       <HStack justifyContent="space-around" bgColor="blackAlpha.900" color="white">
         <Text>Lux Cars</Text>
         <HStack gap="20px">
-          <Link as={RouterLink} to='/' _hover={{ backgroundColor: 'blue.500' }} p="20px" backgroundColor={location.pathname === '/' ? 'blue.500' : undefined}>Inicio</Link>
-          <Link as={RouterLink} to="/vehiculos" _hover={{ backgroundColor: 'blue.500' }} p="20px" backgroundColor={location.pathname === '/vehiculos' ? 'blue.500' : undefined}>Vehiculos</Link>
-          <Link as={RouterLink} to="/contactanos" _hover={{ backgroundColor: 'blue.500' }} p="20px" backgroundColor={location.pathname === '/contactanos' ? 'blue.500' : undefined}>Contactanos</Link>
-          <Link as={RouterLink} to="/login" _hover={{ backgroundColor: 'blue.500' }} p="20px" backgroundColor={location.pathname === '/login' ? 'blue.500' : undefined}>Log in</Link>
+          <Link as={RouterLink} to='/' _hover={{ backgroundColor: 'purple.500' }} p="20px" backgroundColor={location.pathname === '/' ? 'purple.500' : undefined}>Inicio</Link>
+          <Link as={RouterLink} to="/vehiculos" _hover={{ backgroundColor: 'purple.500' }} p="20px" backgroundColor={location.pathname === '/vehiculos' ? 'purple.500' : undefined}>Vehiculos</Link>
+          <Link as={RouterLink} to="/contactanos" _hover={{ backgroundColor: 'purple.500' }} p="20px" backgroundColor={location.pathname === '/contactanos' ? 'purple.500' : undefined}>Contactanos</Link>
+          <Link as={RouterLink} to="/login" _hover={{ backgroundColor: 'purple.500' }} p="20px" backgroundColor={location.pathname === '/login' ? 'purple.500' : undefined}>Log in</Link>
         </HStack>
       </HStack>
 

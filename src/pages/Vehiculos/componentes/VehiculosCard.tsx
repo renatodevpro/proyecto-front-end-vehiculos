@@ -27,7 +27,7 @@ const VehiculosCard: FC<ProductCardType> = ({ product }) => {
       
       <Tag colorScheme='purple'>{product.marca}</Tag>
       <Text as='p' fontSize='xs'>{product.caracteristicas}</Text>
-      <Text as='p' fontSize='xl' fontWeight='bold'>${product.precio}</Text>
+      <Text as='p' fontSize='xl' fontWeight='bold'>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(product.precio || 0)}</Text>
       
       <Button 
         size='sm' 
