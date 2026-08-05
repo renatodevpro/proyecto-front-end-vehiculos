@@ -1,11 +1,11 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
-const RutasPrivadas = () => {
+const LoginOutlet = () => {
     const acceso = localStorage.getItem('dataUsuario');
 
     return (
-        acceso ? <Outlet /> : <Navigate to='/login' replace />
+        acceso ? <Navigate to='/' replace /> : <Outlet />
     );
 };
 
-export default RutasPrivadas;
+export default LoginOutlet;
