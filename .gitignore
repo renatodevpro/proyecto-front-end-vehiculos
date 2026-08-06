@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Contexto local para consultas de desarrollo
+PROJECT_CONTEXT.md

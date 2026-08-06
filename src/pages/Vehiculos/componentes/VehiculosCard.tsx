@@ -1,5 +1,5 @@
 import type { FC } from 'react'
-import { Button, Heading, Image, Link, Tag, Text, VStack } from '@chakra-ui/react'
+import { Button, Heading, HStack, Image, Link, Tag, Text, VStack } from '@chakra-ui/react'
 import { Link as RouterLink } from 'react-router-dom'
 import type { Vehiculo } from '../../../module/vehiculosTipo'
 
@@ -29,14 +29,26 @@ const VehiculosCard: FC<ProductCardType> = ({ product }) => {
       <Text as='p' fontSize='xs'>{product.caracteristicas}</Text>
       <Text as='p' fontSize='xl' fontWeight='bold'>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(product.precio || 0)}</Text>
       
-      <Button 
-        size='sm' 
-        colorScheme='purple' 
-        as={RouterLink} 
-        to={`/${product.id}/pasareladepagos`}
-      >
-        Comprar Vehiculo
-      </Button>
+      <HStack spacing='10px' width='100%'>
+        <Button
+          size='sm'
+          colorScheme='purple'
+          as={RouterLink}
+          to={`/${product.id}/pasareladepagos`}
+        >
+          Comprar Vehículo
+        </Button>
+
+        <Button
+          size='sm'
+          colorScheme='purple'
+          variant='outline'
+          as={RouterLink}
+          to={`/vehiculos/${product.id}`}
+        >
+          Ver detalles
+        </Button>
+      </HStack>
     </VStack>
   )
 }
