@@ -160,6 +160,12 @@ const Contactanos = () => {
                   placeholder="Selecciona una opcin"
                   bg="gray.700"
                   borderColor="gray.600"
+                  sx={{
+                    "& option": {
+                      background: "#2D3748",
+                      color: "white",
+                    },
+                  }}
                 >
                   <option value="deportivos">Vehículos Deportivos</option>
                   <option value="suv">SUV de Lujo</option>
